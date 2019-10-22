@@ -6,12 +6,12 @@ require "website_worth/version"
 Gem::Specification.new do |spec|
   spec.name          = "website_worth"
   spec.version       = WebsiteWorth::VERSION
-  spec.authors       = ["'Naya  Willis'"]
+  spec.authors       = ["'Naya Willis'"]
   spec.email         = ["'greedybrain18@gmail.com'"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{"Website revenue and traffic data at your disposal"}
+  spec.description   = %q{"This gem allows a user to get revenue and traffic data from a particular website"}
+  spec.homepage      = "https://github.com/greedybrain/website_worth.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
