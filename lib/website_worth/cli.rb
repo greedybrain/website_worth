@@ -1,8 +1,10 @@
+require 'pry'
+
 class WebsiteWorth::CLI 
 
   def call 
-    # peak_curiosity: shows user big name sites and there overall worth(google, amazon, facebook) 
-    # 
+    peak_curiosity
+    try_a_site
   end
   
   def big_name_site(site)
@@ -20,7 +22,17 @@ class WebsiteWorth::CLI
   end
   
   def peak_curiosity
-    puts "Check out the revenue and traffic data of some of the most popular websites out there, such as Google with an estimated revenue of #{big_name_site('google.com')[0]} and over #{big_name_site('google.com')[1]} vists a day! Or the retail giant Amazon, with an estimated revenue of #{big_name_site('amazon.com')[0]} and over #{big_name_site('amazon.com')[1]} a day, or even the most popular Social Network Facebook with a revenue of #{big_name_site('facebook.com')[0]} and over #{big_name_site('facebook.com')[1]} visits per day!"
+    puts "Revenue and Traffic Data of Popular Websites\n\n========================================\n\nGoogle - Est. Worth > #{big_name_site('google.com')[0]} - Est. Visits/per day > #{big_name_site('google.com')[1]}\n\nAmazon - Est. Worth > #{big_name_site('amazon.com')[0]} - Est. Visits/per day > #{big_name_site('amazon.com')[1]}\n\nFacebook - Est. Worth > #{big_name_site('facebook.com')[0]} - Est. Visits/per day > #{big_name_site('facebook.com')[1]}"
+  end
+  
+  def try_a_site
   end
 
 end
+
+
+
+
+
+
+
