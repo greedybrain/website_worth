@@ -7,5 +7,11 @@ class User
     @name = gets.chomp
     @name = @name[0].upcase + @name[1..-1].downcase
   end
+  
+  def self.gives_a_site_name
+    print "Enter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "
+    user_choice = gets.chomp.downcase
+    user_choice
+  end
 
 end

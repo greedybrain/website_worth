@@ -11,4 +11,6 @@ class WebsiteWorth::Scraper
     worth
   end
   
+  
+  
 end
