@@ -31,23 +31,23 @@ class WebsiteWorth::Scraper
     views_yearly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[8].text
     
     puts
-    puts "==========#{site_name}=========="
+    puts "========== #{site_name} =========="
     puts
     puts "========== REVENUE =========="
-    puts "========== Overall/ #{overall_revenue} =========="
-    puts "========== Daily/ #{rev_daily} =========="
-    puts "========== Monthly/ #{rev_monthly} =========="
-    puts "========== Yearly/ #{rev_yearly} =========="
+    puts "===== Overall/ #{overall_revenue} ====="
+    puts "===== Daily/ #{rev_daily} ====="
+    puts "===== Monthly/ #{rev_monthly} ====="
+    puts "===== Yearly/ #{rev_yearly} ====="
     puts 
     puts "========== VISITS =========="
-    puts "========== Daily/ #{visits_daily} =========="
-    puts "========== Monthly/ #{visits_monthly} =========="
-    puts "========== Yearly/ #{visits_yearly} =========="
+    puts "===== Daily/ #{visits_daily} ====="
+    puts "===== Monthly/ #{visits_monthly} ====="
+    puts "===== Yearly/ #{visits_yearly} ====="
     puts 
     puts "========== PAGE VIEWS =========="
-    puts "========== Daily/ #{views_daily} =========="
-    puts "========== Monthly/ #{views_monthly} =========="
-    puts "========== Yearly/ #{views_yearly} =========="
+    puts "===== Daily/ #{views_daily} ====="
+    puts "===== Monthly/ #{views_monthly} ====="
+    puts "===== Yearly/ #{views_yearly} ====="
     
   end
   
