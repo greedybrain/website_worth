@@ -1,4 +1,4 @@
-class User 
+class WebsiteWorth::User 
   
   attr_reader :name
 

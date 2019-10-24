@@ -14,7 +14,7 @@ class WebsiteWorth::CLI
   def intro
     time = Time.now
     print "Please enter your name: "
-    puts "Hello, #{User.new.name}. Welcome to the Website Worth checker."
+    puts "Hello, #{Website::User.new.name}. Welcome to the Website Worth checker."
     puts "\nBelow is a very short list of some of the most popular websites along with theirestimated revenue and traffic data as of #{get_date_and_time}. Take a look!"
     puts "=========================================================="
     puts
