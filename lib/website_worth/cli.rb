@@ -26,6 +26,7 @@ class WebsiteWorth::CLI
     puts "Amazon > #{revenue_data[1]}"
     puts "Facebook > #{revenue_data[2]}"
     puts "Youtube > #{revenue_data[3]}"
+    puts
   end
   
   def list_site_info
