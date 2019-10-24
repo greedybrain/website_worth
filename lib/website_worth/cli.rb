@@ -5,7 +5,7 @@ class WebsiteWorth::CLI
   def call 
     intro 
     shows_big_name_data
-    # list_site_info # prompts user to choose a site that they're interested in 
+    list_site_info
     # save_data_to_cpu? # MAYBE feature, prompts user to choose if they want to save data 
   end
   
@@ -14,7 +14,7 @@ class WebsiteWorth::CLI
   def intro
     time = Time.now
     print "Please enter your name: "
-    puts "Hello, #{Website::User.new.name}. Welcome to the Website Worth checker."
+    puts "Hello, #{WebsiteWorth::User.new.name}. Welcome to the Website Worth checker."
     puts "\nBelow is a very short list of some of the most popular websites along with theirestimated revenue and traffic data as of #{get_date_and_time}. Take a look!"
     puts "=========================================================="
     puts
@@ -26,6 +26,10 @@ class WebsiteWorth::CLI
     puts "Amazon > #{revenue_data[1]}"
     puts "Facebook > #{revenue_data[2]}"
     puts "Youtube > #{revenue_data[3]}"
+  end
+  
+  def list_site_info
+    WebsiteWorth::Scraper.get_user_site_data
   end
   
   # Supplement Methods
