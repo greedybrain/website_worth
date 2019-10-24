@@ -11,7 +11,7 @@ class WebsiteWorth::User
   def self.gives_a_site_name
     print "Enter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "
     user_choice = gets.chomp.downcase.to_s
-    user_choice
+    user_choice[0].upcase + user_choice[1..-1].downcase
   end
 
 end
