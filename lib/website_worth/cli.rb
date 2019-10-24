@@ -5,7 +5,7 @@ class WebsiteWorth::CLI
   def call 
     intro 
     shows_big_name_data
-    list_site_info
+    list_users_site_info
     # save_data_to_cpu? # MAYBE feature, prompts user to choose if they want to save data 
   end
   
@@ -29,7 +29,7 @@ class WebsiteWorth::CLI
     puts
   end
   
-  def list_site_info
+  def list_users_site_info
     WebsiteWorth::Scraper.get_user_site_data
   end
   

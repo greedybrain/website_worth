@@ -31,30 +31,27 @@ class WebsiteWorth::Scraper
     views_yearly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[8].text
     
     puts
-    puts "========== #{site_name} =========="
+    puts "           #{site_name}"
     puts
     puts "========== REVENUE =========="
+    puts
     puts "===== Overall/ #{overall_revenue} ====="
     puts "===== Daily/ #{rev_daily} ====="
     puts "===== Monthly/ #{rev_monthly} ====="
     puts "===== Yearly/ #{rev_yearly} ====="
     puts 
     puts "========== VISITS =========="
+    puts
     puts "===== Daily/ #{visits_daily} ====="
     puts "===== Monthly/ #{visits_monthly} ====="
     puts "===== Yearly/ #{visits_yearly} ====="
     puts 
     puts "========== PAGE VIEWS =========="
+    puts
     puts "===== Daily/ #{views_daily} ====="
     puts "===== Monthly/ #{views_monthly} ====="
     puts "===== Yearly/ #{views_yearly} ====="
     
-  end
-  
-  # Supplement Methods
-  
-  def noko_working_on(site_name)
-    Nokogiri::HTML(open("https://www.worthofweb.com/website-value/#{site_name}/"))
   end
   
 end
