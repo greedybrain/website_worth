@@ -30,6 +30,7 @@ class WebsiteWorth::CLI
   end
   
   def list_users_site_info
+    
     WebsiteWorth::Scraper.get_user_site_data
   end
   
