@@ -1,3 +1,5 @@
+require "pry"
+
 class WebsiteWorth::User 
   
   attr_reader :name
@@ -9,9 +11,18 @@ class WebsiteWorth::User
   end
   
   def self.gives_a_site_name
-    print "Enter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "
-    user_choice = gets.chomp.downcase.to_s
+    while true
+      print "Enter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "
+      user_choice = gets.chomp.downcase.to_s
+      if user_choice != ("" || nil)
+        break
+      else
+        puts "Please enter a valid website name"
+        puts
+      end
+    end
     user_choice[0].upcase + user_choice[1..-1].downcase
+    # binding.pry
   end
 
 end

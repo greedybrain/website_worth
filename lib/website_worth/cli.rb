@@ -39,7 +39,7 @@ class WebsiteWorth::CLI
     time = Time.now 
     months = ["January", "February", "March", "April", "May", "June", "July", "August","September", "October", "November","December"]
     days = ["Sunday", "Monday", "Tuesday", "Wednesday" ,"Thursday", "Friday", "Saturday"]
-    "#{days[time.wday]}, #{months[time.month - 1]} #{time.day}, #{time.year} at #{time.hour - 4}:#{time.min}"
+    "#{days[time.wday]}, #{months[time.month - 1]} #{time.day}, #{time.year}."
   end
   
 end

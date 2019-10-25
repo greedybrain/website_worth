@@ -31,8 +31,7 @@ class WebsiteWorth::Scraper
     views_yearly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[8].text
     
     # ========== Alexa Rank ========== #
-    alexa_rank = site.css('div.row')[25].text.gsub(/\R+/, ' ').strip
-    alexa_rank = alexa_rank[alexa_rank.index(':') + 2].to_i
+    alexa_rank = site.css('div.row')[25].text.gsub(/\R+/, ' ').strip.split[9]
     
     puts
     puts "           #{site_name}"
@@ -56,7 +55,8 @@ class WebsiteWorth::Scraper
     puts "===== Monthly/ #{views_monthly} ====="
     puts "===== Yearly/ #{views_yearly} ====="
     puts 
-    puts "===== Alexa Ranking/ #{alex_rank} ====="
+    puts "========== Alexa Rank/ #{alexa_rank} =========="
+    puts
     
   end
   
