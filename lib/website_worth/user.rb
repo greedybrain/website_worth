@@ -24,5 +24,17 @@ class WebsiteWorth::User
     user_choice[0].upcase + user_choice[1..-1].downcase
     # binding.pry
   end
+  
+  def self.search_another_site?
+    while true
+      puts "Would you like to search another site?"
+      user_answer = gets.chomp.downcase.to_s 
+      if user_choice != ("" || nil)
+        User.gives_a_site_name
+      else
+        puts "Please type yes or no."
+      end
+    end
+  end
 
 end
