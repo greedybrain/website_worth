@@ -40,6 +40,8 @@ class WebsiteWorth::CLI
       yes_no = gets.chomp.to_s.downcase
       if yes_no == "y"
         list_users_site_info  
+      elsif yes_no != 'y' || yes_no != 'n'
+        next
       elsif yes_no == ""
         next
       else
