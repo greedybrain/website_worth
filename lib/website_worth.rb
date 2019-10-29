@@ -1,4 +1,4 @@
-require "website_worth/version"
+# require "website_worth/version"
 
 module WebsiteWorth
   class Error < StandardError; end
