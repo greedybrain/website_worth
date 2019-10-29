@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-Follow the prompts accordingly
+Open terminal, and then type in the following 
 
     $ website_worth
 
