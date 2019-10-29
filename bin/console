@@ -12,3 +12,7 @@ require "website_worth"
 
 require "irb"
 IRB.start(__FILE__)
+
+WebsiteWorth::CLI.new.intro
+WebsiteWorth::CLI.new.shows_big_name_data
+WebsiteWorth::CLI.new.call
