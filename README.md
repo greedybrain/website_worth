@@ -2,9 +2,7 @@ Website Worth Tracker
 
 # WebsiteWorth
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/website_worth`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Hello to all, this Ruby Gem provides you the means of getting the estimated data about a particular website. You will be able to see the estimated revenue and estimated traffic data about that site. This Gem should be used for educational or research purposes. Enjoy!
 
 ## Installation
 
