@@ -1,5 +1,6 @@
 class WebsiteWorth::Scraper
 
+  #attributes
   attr_accessor :overall_revenue, :rev_daily, :rev_monthly, :rev_yearly, :visits_daily, :visits_monthly, :visits_yearly, :views_daily, :views_monthly, :views_yearly, :alexa_rank
 
   # Priority Methods
