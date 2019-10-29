@@ -1,21 +1,19 @@
 class WebsiteWorth::CLI 
-  
-  # MAIN METHOD
 
+  # MAIN METHOD
   def call 
-    intro 
-    shows_big_name_data
     list_users_site_info
-    # save_data_to_cpu? # MAYBE feature, prompts user to choose if they want to save data 
+    another? 
   end
   
   # Priority Methods
   
   def intro
     time = Time.now
+    puts
     print "Please enter your name: "
-    puts "Hello, #{WebsiteWorth::User.new.name}. Welcome to the Website Worth checker."
-    puts "\nBelow is a very short list of some of the most popular websites along with theirestimated revenue and traffic data as of #{get_date_and_time}. Take a look!"
+    puts "\nHello, #{WebsiteWorth::User.new.name}. Welcome to the Website Worth checker."
+    puts "\nBelow is a very short list of some of the most popular websites along with their estimated revenue and traffic data as of #{get_date_and_time}, Take a look!"
     puts "=========================================================="
     puts
   end
@@ -30,8 +28,24 @@ class WebsiteWorth::CLI
   end
   
   def list_users_site_info
-    
+    print "\nEnter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "
     WebsiteWorth::Scraper.get_user_site_data
+    # WebsiteWorth::Scraper.prep_for_csv
+  end
+
+  def another?
+    yes_no = nil
+    while yes_no != 'n'
+      print "\nWould you like to try another site?(y/n) or (Ctrl+C[Windows Users] or Control+C[Mac Users]) to exit: "
+      yes_no = gets.chomp.to_s.downcase
+      if yes_no == "y"
+        list_users_site_info  
+      elsif yes_no == ""
+        next
+      else
+        exit!
+      end
+    end
   end
   
   # Supplement Methods
