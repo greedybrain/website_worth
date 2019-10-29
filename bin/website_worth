@@ -5,7 +5,7 @@ require "bundler/setup"
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
-require "./config/environment.rb"
+require_relative "../config/environment.rb"
 
 WebsiteWorth::CLI.new.intro
 WebsiteWorth::CLI.new.shows_big_name_data
