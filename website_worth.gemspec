@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Naya Willis'"]
   spec.email         = ["'greedybrain18@gmail.com'"]
 
-  spec.summary       = %q{"Website revenue and traffic data at your disposal"}
+  spec.summary       = %q{"Website revenue and its' traffic data at your disposal"}
   spec.description   = %q{"This gem allows a user to get revenue and traffic data from a particular website"}
   spec.homepage      = "https://github.com/greedybrain/website_worth.git"
   spec.license       = "MIT"
