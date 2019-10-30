@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/website_worth"
+require "bundler/setup"
+
+require_relative "../config/environment.rb"
 
 WebsiteWorth::CLI.new.intro
 WebsiteWorth::CLI.new.shows_big_name_data

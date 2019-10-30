@@ -3,4 +3,4 @@ module WebsiteWorth
   # Your code goes here...
 end
 
-require 'config/environment.rb'
+require_relative '../config/environment.rb'

@@ -12,16 +12,16 @@ Gem::Specification.new do |spec|
   spec.description   = "Get the latest estimated revenue and traffic data on any website."
   spec.authors       = ["'Naya Willis'"]
   spec.email         = ["'greedybrain18@gmail.com'"]
-  spec.files         = ["lib/website_worth.rb", "lib/website_worth/cli.rb", "lib/website_worth/scraper.rb", "lib/website_worth/user.rb", "config/environment.rb"]
+  spec.files         = ["lib/website_worth.rb", "lib/website_worth/cli.rb", "lib/website_worth/scraper.rb", "lib/website_worth/user.rb", "lib/website_worth/version.rb", "config/environment.rb"]
   spec.homepage      = "https://github.com/greedybrain/website_worth.git"
   spec.license       = "MIT"
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  # spec.executables << 'website_worth'
-
+  spec.executables << 'website_worth'
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
-
+  
 end
+
+# spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
 
 # Specify which files should be added to the gem when it is released.
 # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
