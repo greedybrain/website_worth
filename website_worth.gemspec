@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Get the latest estimated revenue and traffic data on any website."
   spec.authors       = ["'Naya Willis'"]
   spec.email         = ["'greedybrain18@gmail.com'"]
-  spec.files         = ["./lib/website_worth.rb", "./lib/website_worth/cli.rb", "./lib/website_worth/scraper.rb", "./lib/website_worth/user.rb", "./config/environment.rb"]
+  spec.files         = ["lib/website_worth.rb", "lib/website_worth/cli.rb", "lib/website_worth/scraper.rb", "lib/website_worth/user.rb", "config/environment.rb"]
   spec.homepage      = "https://github.com/greedybrain/website_worth.git"
   spec.license       = "MIT"
   spec.executables << 'website_worth'
