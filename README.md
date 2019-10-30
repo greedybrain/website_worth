@@ -25,6 +25,8 @@ Or install it yourself as:
 Open terminal, and then type in the following 
 
     $ website_worth
+    
+Here's a link for a tutorial on using this gem > https://youtu.be/GIA3YxBXRJQ
 
 ## Development
 
