@@ -15,7 +15,8 @@ Gem::Specification.new do |spec|
   spec.files         = ["lib/website_worth.rb", "lib/website_worth/cli.rb", "lib/website_worth/scraper.rb", "lib/website_worth/user.rb", "config/environment.rb"]
   spec.homepage      = "https://github.com/greedybrain/website_worth.git"
   spec.license       = "MIT"
-  spec.executables << 'website_worth'
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  # spec.executables << 'website_worth'
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
@@ -28,5 +29,5 @@ end
 #   `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
 # end
 # spec.bindir        = "bin"
-# spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+
 # spec.require_paths = ["lib"]
