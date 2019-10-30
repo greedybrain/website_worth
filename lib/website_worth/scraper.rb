@@ -13,33 +13,43 @@ class WebsiteWorth::Scraper
     end
     worth
   end
-  
+
   def self.get_user_site_data
-    site_name = WebsiteWorth::User.gives_a_site_name
-    site = Nokogiri::HTML(open("https://www.worthofweb.com/website-value/#{site_name}/"))
-      
+    get_data_source
+    pin_point_data
+    print_data
+  end
+
+  def self.get_data_source
+    @site_name = WebsiteWorth::User.gives_a_site_name
+    @site = Nokogiri::HTML(open("https://www.worthofweb.com/website-value/#{@site_name}/"))
+  end
+
+  def self.pin_point_data 
     # ========== Revenue ========== #
     begin
-      @overall_revenue = site.css('div.card-body div.side-left p:nth-of-type(2)')[0].text
+      @overall_revenue = @site.css('div.card-body div.side-left p:nth-of-type(2)')[0].text
     rescue NoMethodError
       puts "Sorry, it seems that the website you entered was invalid"
       WebsiteWorth::CLI.new.call
     end
-    @rev_daily = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[0].text
-    @rev_monthly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[1].text
-    @rev_yearly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[2].text
+    @rev_daily = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[0].text
+    @rev_monthly = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[1].text
+    @rev_yearly = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[2].text
     # ========== Visits ========== #
-    @visits_daily = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[3].text
-    @visits_monthly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[5].text
-    @visits_yearly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[7].text
+    @visits_daily = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[3].text
+    @visits_monthly = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[5].text
+    @visits_yearly = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[7].text
     # ========== Page Views ========== #
-    @views_daily = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[4].text
-    @views_monthly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[6].text
-    @views_yearly = site.css('div.card-body .col-md-4 p:nth-of-type(2)')[8].text
+    @views_daily = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[4].text
+    @views_monthly = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[6].text
+    @views_yearly = @site.css('div.card-body .col-md-4 p:nth-of-type(2)')[8].text
     # ========== Alexa Rank ========== #
-    @alexa_rank = site.css('div.row')[25].text.gsub(/\R+/, ' ').strip.split[9]
+    @alexa_rank = @site.css('div.row')[25].text.gsub(/\R+/, ' ').strip.split[9]
+  end
 
-    puts "\n           #{site_name.upcase}"
+  def self.print_data
+    puts "\n           #{@site_name.upcase}"
     puts
     puts "========== REVENUE =========="
     puts
@@ -62,5 +72,5 @@ class WebsiteWorth::Scraper
     puts 
     puts "========== Alexa Rank/ #{@alexa_rank} =========="
   end
-  
+
 end
