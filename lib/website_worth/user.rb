@@ -1,14 +1,14 @@
+require "pry"
 class WebsiteWorth::User
   
   attr_reader :name
 
   # responsible for providing his/her name and the necessary info to scrape
-  def initialize
-    begin
-      @name = gets.chomp.to_s
-      @name = @name[0].upcase + @name[1..-1].downcase
-    rescue 
+  def initialize(name)
+    if name == ""
       @name = "User"
+    else
+      @name = name[0].upcase + name[1..-1].downcase
     end
   end
   

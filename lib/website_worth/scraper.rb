@@ -1,11 +1,11 @@
 class WebsiteWorth::Scraper
 
   #attributes
-  attr_accessor :overall_revenue, :rev_daily, :rev_monthly, :rev_yearly, :visits_daily, :visits_monthly, :visits_yearly, :views_daily, :views_monthly, :views_yearly, :alexa_rank
+  # attr_accessor :overall_revenue, :rev_daily, :rev_monthly, :rev_yearly, :visits_daily, :visits_monthly, :visits_yearly, :views_daily, :views_monthly, :views_yearly, :alexa_rank
 
   # Priority Methods
 
-  def self.gets_big_name_data
+  def gets_big_name_data
     urls = ["https://www.worthofweb.com/website-value/google/", "https://www.worthofweb.com/website-value/amazon/", "https://www.worthofweb.com/website-value/facebook/", "https://www.worthofweb.com/website-value/youtube/"]
     worth = []
     urls.each do |url|
@@ -14,18 +14,18 @@ class WebsiteWorth::Scraper
     worth
   end
 
-  def self.get_user_site_data
+  def get_user_site_data
     get_data_source
     pin_point_data
     print_data
   end
 
-  def self.get_data_source
+  def get_data_source
     @site_name = WebsiteWorth::User.gives_a_site_name
     @site = Nokogiri::HTML(open("https://www.worthofweb.com/website-value/#{@site_name}/"))
   end
 
-  def self.pin_point_data 
+  def pin_point_data 
     # ========== Revenue ========== #
     begin
       @overall_revenue = @site.css('div.card-body div.side-left p:nth-of-type(2)')[0].text
@@ -48,7 +48,7 @@ class WebsiteWorth::Scraper
     @alexa_rank = @site.css('div.row')[25].text.gsub(/\R+/, ' ').strip.split[9]
   end
 
-  def self.print_data
+  def print_data
     puts "\n           #{@site_name.upcase}"
     puts
     puts "========== REVENUE =========="

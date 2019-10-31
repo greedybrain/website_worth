@@ -4,7 +4,8 @@ require "bundler/setup"
 
 require_relative "../config/environment.rb"
 
-WebsiteWorth::CLI.new.intro
-WebsiteWorth::CLI.new.shows_big_name_data
-WebsiteWorth::CLI.new.call
+worth = WebsiteWorth::CLI.new
+worth.intro
+worth.shows_big_name_data
+worth.call
 

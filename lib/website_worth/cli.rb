@@ -1,3 +1,4 @@
+require "pry"
 class WebsiteWorth::CLI 
 
   # MAIN METHOD
@@ -12,14 +13,17 @@ class WebsiteWorth::CLI
     time = Time.now
     puts
     print "Please enter your name: "
-    puts "\nHello, #{WebsiteWorth::User.new.name}. Welcome to the Website Worth checker."
+    name = gets.chomp
+    puts "\nHello, #{WebsiteWorth::User.new(name).name}. Welcome to the Website Worth checker."
     puts "\nBelow is a very short list of some of the most popular websites along with their estimated revenue and traffic data as of #{get_date_and_time}, Take a look!"
     puts "=========================================================="
     puts
   end
   
   def shows_big_name_data
-    revenue_data = WebsiteWorth::Scraper.gets_big_name_data
+    scraper_object = WebsiteWorth::Scraper.new
+    revenue_data = scraper_object.gets_big_name_data
+    # binding.pry
     puts "Google > #{revenue_data[0]}"
     puts "Amazon > #{revenue_data[1]}"
     puts "Facebook > #{revenue_data[2]}"
@@ -29,7 +33,8 @@ class WebsiteWorth::CLI
   
   def list_users_site_info
     print "\nEnter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "
-    WebsiteWorth::Scraper.get_user_site_data
+    scraper_object = WebsiteWorth::Scraper.new 
+    scraper_object.get_user_site_data
     # WebsiteWorth::Scraper.prep_for_csv
   end
 
