@@ -1,18 +1,17 @@
-require "pry"
+require 'csv'
 class WebsiteWorth::CLI 
 
   # MAIN METHOD
   def call 
     list_users_site_info
-    another? 
+    another?
   end
   
   # Priority Methods
   
   def intro
     time = Time.now
-    puts
-    print "Please enter your name: "
+    print "\nPlease enter your name: "
     name = gets.chomp
     puts "\nHello, #{WebsiteWorth::User.new(name).name}. Welcome to the Website Worth checker."
     puts "\nBelow is a very short list of some of the most popular websites along with their estimated revenue and traffic data as of #{get_date_and_time}, Take a look!"
@@ -30,6 +29,8 @@ class WebsiteWorth::CLI
     puts "Youtube > #{revenue_data[3]}"
     puts
   end
+
+  # WILLIS 
   
   def list_users_site_info
     print "\nEnter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "

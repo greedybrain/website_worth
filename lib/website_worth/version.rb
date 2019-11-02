@@ -1,3 +1,3 @@
 module WebsiteWorth
-  VERSION = "0.3.6"
+  VERSION = "0.3.9"
 end
