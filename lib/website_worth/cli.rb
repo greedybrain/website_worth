@@ -20,7 +20,7 @@ class WebsiteWorth::CLI
   end
   
   def shows_big_name_data
-    scraper_object = WebsiteWorth::Scraper.new
+    @scraper_object = WebsiteWorth::Scraper.new
     revenue_data = scraper_object.gets_big_name_data
     # binding.pry
     puts "Google > #{revenue_data[0]}"
@@ -33,9 +33,8 @@ class WebsiteWorth::CLI
   # WILLIS 
   
   def list_users_site_info
-    print "\nEnter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): "
-    scraper_object = WebsiteWorth::Scraper.new 
-    scraper_object.get_user_site_data
+    print "\nEnter the website that you're interested in > (eg. google.com, repl.it, yoursite.net): " 
+    @scraper_object.get_user_site_data
     # WebsiteWorth::Scraper.prep_for_csv
   end
 
